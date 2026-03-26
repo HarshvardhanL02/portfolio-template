@@ -1,1 +1,547 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!--
+    ============================================================
+    index.html — Portfolio of Harshvardhan Lokhande
+    This file defines the STRUCTURE of the website (the skeleton).
+    Think of it like the blueprint of a building.
+    ============================================================
+  -->
+  <meta charset="UTF-8" />
 
+  <!-- Makes the website fit properly on mobile screens -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Harshvardhan Lokhande | Engineer & Builder</title>
+
+  <!-- 
+    Google Fonts — Loading two custom fonts:
+    - "Exo 2"  → Sharp, technical look for headings
+    - "Nunito" → Friendly, readable font for body text
+  -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Exo+2:wght@300;400;600;700;800&family=Nunito:wght@300;400;500;600&display=swap" rel="stylesheet" />
+
+  <!-- Link to our external CSS file (styling lives there) -->
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+
+  <!-- =====================================================================
+       SECTION 1: NAVBAR
+       Fixed top navigation bar. Stays visible as the user scrolls.
+       JavaScript will add a "scrolled" class to change its appearance.
+  ====================================================================== -->
+  <nav class="navbar" id="navbar">
+    <div class="nav-brand">
+      <!-- Logo: initials + a styled dot -->
+      <span class="brand-text">HVL</span><span class="brand-dot">.</span>
+    </div>
+
+    <!-- Desktop navigation links -->
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#home"        class="nav-link">Home</a></li>
+      <li><a href="#about"       class="nav-link">About</a></li>
+      <li><a href="#projects"    class="nav-link">Projects</a></li>
+      <li><a href="#creative"    class="nav-link">Creative Tech</a></li>
+      <li><a href="#contact"     class="nav-link">Contact</a></li>
+    </ul>
+
+    <!-- Hamburger button — only visible on mobile -->
+    <!-- aria-label makes it accessible to screen readers -->
+    <button class="hamburger" id="hamburger" aria-label="Toggle navigation">
+      <span class="ham-line"></span>
+      <span class="ham-line"></span>
+      <span class="ham-line"></span>
+    </button>
+  </nav>
+
+  <!-- Mobile dropdown menu (hidden by default, toggled by JS) -->
+  <div class="mobile-nav" id="mobileNav">
+    <a href="#home"     class="mobile-nav-link">Home</a>
+    <a href="#about"    class="mobile-nav-link">About</a>
+    <a href="#projects" class="mobile-nav-link">Projects</a>
+    <a href="#creative" class="mobile-nav-link">Creative Tech</a>
+    <a href="#contact"  class="mobile-nav-link">Contact</a>
+  </div>
+
+
+  <!-- =====================================================================
+       SECTION 2: HERO
+       The very first thing visitors see. Contains:
+       - Your name (big and bold)
+       - Your title/role
+       - A short intro line
+       - A CTA (Call To Action) button
+  ====================================================================== -->
+  <section class="hero" id="home">
+
+    <!-- 
+      Decorative background canvas — drawn by JavaScript (script.js).
+      This creates an animated dot-grid pattern like an engineering schematic.
+    -->
+    <canvas class="hero-canvas" id="heroCanvas"></canvas>
+
+    <!-- Main hero content -->
+    <div class="hero-content">
+
+      <!-- Small label above the name -->
+      <div class="hero-tag fade-in">
+        <span class="tag-dot"></span> First Year Engineering · Mechanical
+      </div>
+
+      <!-- Main heading: your name -->
+      <h1 class="hero-name fade-in">
+        Harshvardhan<br />
+        <span class="name-accent">Lokhande</span>
+      </h1>
+
+      <!-- Subtitle: what you do -->
+      <p class="hero-subtitle fade-in">
+        Building technology-driven solutions at the intersection of
+        <em>automation</em>, <em>web tools</em>, and <em>engineering systems</em>.
+      </p>
+
+      <!-- Action buttons -->
+      <div class="hero-actions fade-in">
+        <!-- Primary CTA: takes user to projects -->
+        <a href="#projects" class="btn btn-primary">View My Projects</a>
+        <!-- Secondary CTA: takes user to contact -->
+        <a href="#contact"  class="btn btn-outline">Get In Touch</a>
+      </div>
+
+      <!-- College badge card -->
+      <div class="hero-badge fade-in">
+        <div class="badge-icon">🎓</div>
+        <div class="badge-info">
+          <span class="badge-title">MIT Academy of Engineering</span>
+          <span class="badge-sub">MITAOE · Pune, Maharashtra</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Scroll indicator at the bottom of hero -->
+    <div class="scroll-hint">
+      <span>Scroll</span>
+      <div class="scroll-line"></div>
+    </div>
+  </section>
+
+
+  <!-- =====================================================================
+       SECTION 3: ABOUT
+       Two-column layout:
+       Left  → Personal intro + Fields of Interest
+       Right → Skills + Education card
+  ====================================================================== -->
+  <section class="about" id="about">
+    <div class="container">
+
+      <!-- Section header (reused pattern throughout the page) -->
+      <div class="section-header">
+        <span class="section-label fade-in">// who_i_am</span>
+        <h2 class="section-title fade-in">About <span class="accent">Me</span></h2>
+      </div>
+
+      <!-- Two-column grid -->
+      <div class="about-grid">
+
+        <!-- LEFT COLUMN: Bio + interests -->
+        <div class="about-left fade-in">
+          <p class="about-bio">
+            I am a first-year engineering student interested in building
+            technology-driven solutions and exploring how automation and
+            engineering systems can solve real-world problems. I enjoy
+            working on web-based tools and data-driven projects that
+            help students.
+          </p>
+
+          <!-- Fields of Interest -->
+          <h3 class="subsection-title">Fields of Interest</h3>
+
+          <div class="interest-card interest-primary">
+            <div class="interest-icon">⚙️</div>
+            <div class="interest-body">
+              <strong>Automation &amp; Control Systems</strong>
+              <span class="interest-badge">Primary Interest</span>
+              <p>Exploring how automated systems can reduce manual effort and improve precision in engineering processes.</p>
+            </div>
+          </div>
+
+          <div class="interest-card interest-secondary">
+            <div class="interest-icon">🚀</div>
+            <div class="interest-body">
+              <strong>Aerospace Technologies</strong>
+              <span class="interest-badge interest-badge-dim">Secondary Interest</span>
+              <p>Fascinated by flight mechanics, propulsion systems, and the engineering behind aerospace innovation.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- RIGHT COLUMN: Skills + Education -->
+        <div class="about-right fade-in">
+
+          <!-- Skills panel -->
+          <div class="skills-panel">
+            <h3 class="subsection-title">Technical Skills</h3>
+            <div class="skills-list">
+              <!--
+                Each skill has a label and a progress bar.
+                The width of the fill bar is set via an inline style.
+                In a real project, these would come from a data source.
+              -->
+              <div class="skill-item">
+                <div class="skill-header">
+                  <span>HTML &amp; CSS</span><span>85%</span>
+                </div>
+                <div class="skill-bar"><div class="skill-fill" style="width: 85%"></div></div>
+              </div>
+
+              <div class="skill-item">
+                <div class="skill-header">
+                  <span>JavaScript</span><span>75%</span>
+                </div>
+                <div class="skill-bar"><div class="skill-fill" style="width: 75%"></div></div>
+              </div>
+
+              <div class="skill-item">
+                <div class="skill-header">
+                  <span>Firebase (Basics)</span><span>55%</span>
+                </div>
+                <div class="skill-bar"><div class="skill-fill" style="width: 55%"></div></div>
+              </div>
+
+              <div class="skill-item">
+                <div class="skill-header">
+                  <span>Problem Solving</span><span>80%</span>
+                </div>
+                <div class="skill-bar"><div class="skill-fill" style="width: 80%"></div></div>
+              </div>
+
+              <div class="skill-item">
+                <div class="skill-header">
+                  <span>Data Handling</span><span>70%</span>
+                </div>
+                <div class="skill-bar"><div class="skill-fill" style="width: 70%"></div></div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Education card -->
+          <div class="edu-card fade-in">
+            <div class="edu-year">2024 – 2028</div>
+            <div class="edu-details">
+              <span class="edu-degree">B.E. Mechanical Engineering</span>
+              <span class="edu-college">MIT Academy of Engineering</span>
+              <span class="edu-location">Pune, Maharashtra</span>
+            </div>
+          </div>
+
+        </div><!-- end about-right -->
+      </div><!-- end about-grid -->
+    </div><!-- end container -->
+  </section>
+
+
+  <!-- =====================================================================
+       SECTION 4: PROJECTS
+       A grid of project cards. Each card has:
+       - Project number + icon
+       - Title and description
+       - Technology tags
+       - A status indicator
+  ====================================================================== -->
+  <section class="projects" id="projects">
+    <div class="container">
+
+      <div class="section-header">
+        <span class="section-label fade-in">// what_i_built</span>
+        <h2 class="section-title fade-in">My <span class="accent">Projects</span></h2>
+        <p class="section-desc fade-in">
+          Real tools built to solve real problems — focused on students and automation.
+        </p>
+      </div>
+
+      <!-- Project cards grid -->
+      <div class="projects-grid">
+
+        <!-- ── PROJECT CARD 1 ── -->
+        <article class="project-card fade-in">
+          <div class="card-header">
+            <span class="card-number">01</span>
+            <span class="card-emoji">🎯</span>
+          </div>
+          <h3 class="card-title">MHT-CET College Predictor Tool</h3>
+          <p class="card-desc">
+            A web-based tool that helps students predict their college
+            options based on MHT-CET marks and rank. Simplifies the
+            complex admission process for Maharashtra engineering aspirants.
+          </p>
+          <div class="card-tags">
+            <span class="tag">HTML</span>
+            <span class="tag">CSS</span>
+            <span class="tag">JavaScript</span>
+            <span class="tag">Data Handling</span>
+          </div>
+          <div class="card-footer">
+            <span class="status-dot"></span>
+            <span class="status-text">Student Utility Tool</span>
+          </div>
+        </article>
+
+        <!-- ── PROJECT CARD 2 ── -->
+        <article class="project-card fade-in">
+          <div class="card-header">
+            <span class="card-number">02</span>
+            <span class="card-emoji">📄</span>
+          </div>
+          <h3 class="card-title">PDF Data Extraction Tool</h3>
+          <p class="card-desc">
+            A tool that extracts structured data from PDF documents
+            for further analysis and usage. Automates manual data-entry
+            tasks and speeds up information processing workflows.
+          </p>
+          <div class="card-tags">
+            <span class="tag">JavaScript</span>
+            <span class="tag">PDF Parsing</span>
+            <span class="tag">Automation</span>
+          </div>
+          <div class="card-footer">
+            <span class="status-dot"></span>
+            <span class="status-text">Automation Tool</span>
+          </div>
+        </article>
+
+        <!-- ── PROJECT CARD 3 (Sample) ── -->
+        <article class="project-card fade-in">
+          <div class="card-header">
+            <span class="card-number">03</span>
+            <span class="card-emoji">📊</span>
+          </div>
+          <h3 class="card-title">Student Result Dashboard</h3>
+          <p class="card-desc">
+            A dashboard where students enter their subject marks and
+            instantly view a semester performance summary, estimated
+            CGPA, and subject-wise analysis — stored using Firebase.
+          </p>
+          <div class="card-tags">
+            <span class="tag">HTML</span>
+            <span class="tag">CSS</span>
+            <span class="tag">JavaScript</span>
+            <span class="tag">Firebase</span>
+          </div>
+          <div class="card-footer">
+            <span class="status-dot status-wip"></span>
+            <span class="status-text">In Development</span>
+          </div>
+        </article>
+
+      </div><!-- end projects-grid -->
+    </div>
+  </section>
+
+
+  <!-- =====================================================================
+       SECTION 5: CREATIVE TECHNOLOGY
+       Explains the concept and ties it to your background.
+       Three "pillar" cards show how you apply creative tech.
+  ====================================================================== -->
+  <section class="creative" id="creative">
+    <div class="container">
+
+      <div class="section-header">
+        <span class="section-label fade-in">// my_philosophy</span>
+        <h2 class="section-title fade-in">Creative <span class="accent">Technology</span></h2>
+      </div>
+
+      <!-- Main definition card -->
+      <div class="ct-definition fade-in">
+        <div class="ct-quote-mark">"</div>
+        <p>
+          <strong>Creative Technology</strong> is not just about writing code or
+          building circuits — it's about using technical tools imaginatively to
+          solve problems that matter. It's where engineering precision meets
+          human-centred thinking.
+        </p>
+        <p>
+          As a mechanical engineering student who also builds web tools, I sit
+          at the intersection of physical systems and digital solutions. My
+          goal is to bridge these two worlds to create tools that are practical,
+          accessible, and impactful.
+        </p>
+      </div>
+
+      <!-- Three connection pillars -->
+      <div class="ct-pillars">
+
+        <div class="pillar-card fade-in">
+          <div class="pillar-icon">⚙️</div>
+          <h4>Automation</h4>
+          <p>
+            Automating repetitive tasks — like manual college searching or
+            PDF data entry — saves time and eliminates human error. That's
+            the core promise of control systems engineering applied to software.
+          </p>
+        </div>
+
+        <div class="pillar-card fade-in">
+          <div class="pillar-icon">🌐</div>
+          <h4>Web Tools</h4>
+          <p>
+            Browser-based tools need zero installation and work on any device.
+            Making engineering utilities accessible through the web is
+            democratising knowledge — anyone can use them.
+          </p>
+        </div>
+
+        <div class="pillar-card fade-in">
+          <div class="pillar-icon">🔩</div>
+          <h4>Engineering Systems</h4>
+          <p>
+            Systems thinking — understanding how components interact — applies
+            equally to mechanical assemblies and to code architecture.
+            Every project I build follows a structured, systems-based approach.
+          </p>
+        </div>
+
+      </div><!-- end ct-pillars -->
+    </div>
+  </section>
+
+
+  <!-- =====================================================================
+       SECTION 6: CONTACT
+       Left column: contact info text.
+       Right column: form with name, email, message fields.
+       JavaScript handles validation when user submits.
+  ====================================================================== -->
+  <section class="contact" id="contact">
+    <div class="container">
+
+      <div class="section-header">
+        <span class="section-label fade-in">// reach_out</span>
+        <h2 class="section-title fade-in">Contact <span class="accent">Me</span></h2>
+      </div>
+
+      <div class="contact-grid">
+
+        <!-- LEFT: Info -->
+        <div class="contact-info fade-in">
+          <p class="contact-intro">
+            Have a project idea, internship opportunity, or just want
+            to connect? I'd love to hear from you.
+          </p>
+
+          <!-- Individual contact detail rows -->
+          <div class="contact-item">
+            <span class="contact-icon">📍</span>
+            <span>Pune / Nashik, Maharashtra</span>
+          </div>
+          <div class="contact-item">
+            <span class="contact-icon">🎓</span>
+            <span>MIT Academy of Engineering (MITAOE)</span>
+          </div>
+          <div class="contact-item">
+            <span class="contact-icon">💼</span>
+            <span>Open to Internships &amp; Collaborations</span>
+          </div>
+          <div class="contact-item">
+            <span class="contact-icon">🛠️</span>
+            <span>Web Tools · Automation · Data Projects</span>
+          </div>
+        </div>
+
+        <!-- RIGHT: Form -->
+        <!--
+          novalidate → We handle validation ourselves in JavaScript.
+          Without it, the browser shows its own (less styled) error messages.
+        -->
+        <form class="contact-form fade-in" id="contactForm" novalidate>
+
+          <!-- Name field -->
+          <div class="form-group">
+            <label for="name" class="form-label">Your Name</label>
+            <input
+              type="text"
+              id="name"
+              name="name"
+              class="form-input"
+              placeholder="e.g. Rahul Sharma"
+            />
+            <!-- Error message — hidden by default, shown by JS if invalid -->
+            <span class="form-error" id="nameError">Please enter your name.</span>
+          </div>
+
+          <!-- Email field -->
+          <div class="form-group">
+            <label for="email" class="form-label">Email Address</label>
+            <input
+              type="email"
+              id="email"
+              name="email"
+              class="form-input"
+              placeholder="you@example.com"
+            />
+            <span class="form-error" id="emailError">Please enter a valid email address.</span>
+          </div>
+
+          <!-- Message field -->
+          <div class="form-group">
+            <label for="message" class="form-label">Your Message</label>
+            <textarea
+              id="message"
+              name="message"
+              class="form-input form-textarea"
+              rows="5"
+              placeholder="Write your message here..."
+            ></textarea>
+            <span class="form-error" id="messageError">Please write a message (min. 10 characters).</span>
+          </div>
+
+          <!-- Submit button -->
+          <button type="submit" class="btn btn-primary btn-full" id="submitBtn">
+            Send Message →
+          </button>
+
+          <!-- Success message — hidden until form is successfully submitted -->
+          <div class="form-success" id="formSuccess">
+            ✅ Message received! I'll get back to you soon.
+          </div>
+
+        </form>
+
+      </div><!-- end contact-grid -->
+    </div>
+  </section>
+
+
+  <!-- =====================================================================
+       FOOTER
+       Simple centered footer with name, degree, and copyright.
+  ====================================================================== -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-logo">HVL<span class="brand-dot">.</span></div>
+      <p class="footer-name">Harshvardhan Lokhande</p>
+      <p class="footer-course">B.E. Mechanical Engineering · MITAOE · 2024–2028</p>
+      <p class="footer-copy">
+        &copy; 2024 Harshvardhan Lokhande — Built with HTML, CSS &amp; Vanilla JavaScript.
+      </p>
+    </div>
+  </footer>
+
+
+  <!--
+    Link to our JavaScript file.
+    IMPORTANT: This is placed at the BOTTOM of body (not in <head>).
+    Reason: The browser loads HTML top-to-bottom. If we put JS in <head>,
+    it runs before the HTML elements exist — and JS can't find them!
+    Placing it here ensures all HTML elements are loaded first.
+  -->
+  <script src="script.js"></script>
+
+</body>
+</html>
