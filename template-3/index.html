@@ -1,1 +1,393 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Harshvardhan Lokhande — Portfolio</title>
+  <link rel="stylesheet" href="style.css" />
+  <!-- Google Fonts: Syne for headings, Source Code Pro for code-like labels, Inter for body -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=Source+Code+Pro:wght@400;500&family=Manrope:wght@400;500;600&display=swap" rel="stylesheet" />
+</head>
+<body>
 
+  <!-- ============================================================
+       NAVBAR
+       Fixed top bar with nav links + hamburger for mobile
+  ============================================================ -->
+  <nav class="navbar" id="navbar">
+    <div class="nav-brand">HL<span class="accent">.</span></div>
+    <ul class="nav-links" id="nav-links">
+      <li><a href="#home" class="nav-link">Home</a></li>
+      <li><a href="#about" class="nav-link">About</a></li>
+      <li><a href="#projects" class="nav-link">Projects</a></li>
+      <li><a href="#creative-tech" class="nav-link">Creative Technology</a></li>
+      <li><a href="#contact" class="nav-link">Contact</a></li>
+    </ul>
+    <!-- Hamburger icon — three lines that toggle on mobile -->
+    <button class="hamburger" id="hamburger" aria-label="Toggle navigation">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+  </nav>
+
+  <!-- ============================================================
+       HERO SECTION
+       Full-screen intro with name, title, tagline
+  ============================================================ -->
+  <section class="hero" id="home">
+    <!-- Blueprint grid sits in background via CSS -->
+    <div class="hero-grid-overlay"></div>
+
+    <div class="hero-content">
+      <!-- Small label above the name -->
+      <p class="hero-label fade-up">MITAOE, Pune &nbsp;·&nbsp; B.Tech Mechanical Engg. 2025–2029</p>
+
+      <h1 class="hero-name fade-up">Harshvardhan<br />Lokhande</h1>
+
+      <p class="hero-title fade-up">Mechanical Engineering Student <span class="accent">&</span> Tech Builder</p>
+
+      <p class="hero-tagline fade-up">
+        "Focused on building tools that actually get used,<br class="br-desktop" /> not just projects for marks."
+      </p>
+
+      <div class="hero-cta fade-up">
+        <a href="#projects" class="btn btn-primary">View Projects</a>
+        <a href="#contact" class="btn btn-outline">Get in Touch</a>
+      </div>
+    </div>
+
+    <!-- Decorative corner bracket — engineering aesthetic -->
+    <div class="corner-bracket top-left"></div>
+    <div class="corner-bracket bottom-right"></div>
+
+    <!-- Scroll cue -->
+    <div class="scroll-cue">
+      <span>scroll</span>
+      <div class="scroll-line"></div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       ABOUT SECTION
+       Bio, field of interest, skills
+  ============================================================ -->
+  <section class="section about" id="about">
+    <div class="container">
+
+      <div class="section-header fade-up">
+        <span class="section-tag">// 01</span>
+        <h2 class="section-title">About Me</h2>
+      </div>
+
+      <div class="about-grid">
+
+        <!-- Bio block -->
+        <div class="about-bio fade-up">
+          <p>
+            I'm a first-year Mechanical Engineering student at MITAOE, Pune. While most of my batch is still finding
+            their footing, I've been building practical tools aimed at solving real student problems — things that
+            actually save time, not just look good in a submission.
+          </p>
+          <p>
+            My first serious project was a <strong>college predictor for MHT-CET</strong> — something I built because
+            I found the admission process needlessly confusing. I extracted cutoff data from government PDFs,
+            structured it, and made it searchable. That experience pulled me deep into data handling and
+            automation thinking.
+          </p>
+          <p>
+            On the engineering side, I'm drawn to <strong>Automation & Control Systems</strong> — the idea that
+            you can design a system once and let it do the repetitive work. I also follow developments in
+            <strong>Aeronautical Technologies</strong>, especially where electronics and control theory
+            overlap with aircraft systems.
+          </p>
+        </div>
+
+        <!-- Right column: interest + skills -->
+        <div class="about-right">
+
+          <!-- Fields of Interest -->
+          <div class="interest-block fade-up">
+            <h3 class="block-label">Fields of Interest</h3>
+            <div class="interest-item primary">
+              <span class="interest-tag">Primary</span>
+              <span class="interest-name">Automation &amp; Control Systems</span>
+            </div>
+            <div class="interest-item secondary">
+              <span class="interest-tag">Secondary</span>
+              <span class="interest-name">Aeronautical Technologies</span>
+            </div>
+          </div>
+
+          <!-- Skills -->
+          <div class="skills-block fade-up">
+            <h3 class="block-label">Skills</h3>
+            <div class="skills-grid">
+
+              <div class="skill-card">
+                <span class="skill-name">HTML &amp; CSS</span>
+                <span class="skill-level strong">Strong</span>
+              </div>
+
+              <div class="skill-card">
+                <span class="skill-name">JavaScript</span>
+                <span class="skill-level intermediate">Intermediate</span>
+              </div>
+
+              <div class="skill-card">
+                <span class="skill-name">Firebase</span>
+                <span class="skill-level basic">Basic</span>
+              </div>
+
+              <div class="skill-card">
+                <span class="skill-name">Problem Solving</span>
+                <span class="skill-level core">Core</span>
+              </div>
+
+              <div class="skill-card">
+                <span class="skill-name">Data Handling</span>
+                <span class="skill-level core">Core</span>
+              </div>
+
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       PROJECTS SECTION
+       3 project cards with tags
+  ============================================================ -->
+  <section class="section projects" id="projects">
+    <div class="container">
+
+      <div class="section-header fade-up">
+        <span class="section-tag">// 02</span>
+        <h2 class="section-title">Projects</h2>
+      </div>
+
+      <div class="projects-grid">
+
+        <!-- Project 1 -->
+        <div class="project-card fade-up">
+          <div class="project-number">01</div>
+          <div class="project-content">
+            <h3 class="project-title">MHT-CET College Predictor Tool</h3>
+            <p class="project-desc">
+              Pulls real cutoff data from government PDFs and lets students check their admission chances
+              instantly. Built this because the manual process of going through hundreds of college cutoffs
+              was genuinely painful for students and their families.
+            </p>
+            <div class="project-tags">
+              <span class="tag">HTML/CSS/JS</span>
+              <span class="tag">PDF Data</span>
+              <span class="tag">Student Tool</span>
+              <span class="tag">Data Extraction</span>
+            </div>
+          </div>
+          <div class="project-status">
+            <span class="status-dot"></span> Built &amp; Used
+          </div>
+        </div>
+
+        <!-- Project 2 -->
+        <div class="project-card fade-up">
+          <div class="project-number">02</div>
+          <div class="project-content">
+            <h3 class="project-title">PDF Data Extraction Tool</h3>
+            <p class="project-desc">
+              Automates the messy job of pulling structured data out of unstructured PDFs. Reduces manual
+              data entry errors and makes large datasets actually workable. Useful for anyone dealing with
+              government reports or academic data files.
+            </p>
+            <div class="project-tags">
+              <span class="tag">Automation</span>
+              <span class="tag">JavaScript</span>
+              <span class="tag">Data Parsing</span>
+              <span class="tag">Workflow</span>
+            </div>
+          </div>
+          <div class="project-status">
+            <span class="status-dot"></span> Functional
+          </div>
+        </div>
+
+        <!-- Project 3 -->
+        <div class="project-card fade-up">
+          <div class="project-number">03</div>
+          <div class="project-content">
+            <h3 class="project-title">Student Result Dashboard</h3>
+            <p class="project-desc">
+              A sample project where students input their marks and get a clean performance analysis view.
+              Built as a learning exercise for Firebase integration — handles data storage and retrieval
+              without a traditional backend.
+            </p>
+            <div class="project-tags">
+              <span class="tag">Firebase</span>
+              <span class="tag">Dashboard UI</span>
+              <span class="tag">JavaScript</span>
+              <span class="tag">Sample Project</span>
+            </div>
+          </div>
+          <div class="project-status">
+            <span class="status-dot sample"></span> Sample
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       CREATIVE TECHNOLOGY SECTION
+       Explanation + personal take + connection to engineering
+  ============================================================ -->
+  <section class="section creative-tech" id="creative-tech">
+    <div class="container">
+
+      <div class="section-header fade-up">
+        <span class="section-tag">// 03</span>
+        <h2 class="section-title">Creative Technology</h2>
+      </div>
+
+      <div class="ct-grid">
+
+        <!-- Definition block -->
+        <div class="ct-block fade-up">
+          <h3 class="ct-sub">What is Creative Technology?</h3>
+          <p>
+            Creative Technology is the space where design thinking, engineering, and digital tools come together
+            to build something that didn't exist before. It's not just coding, and it's not just design —
+            it's using whatever tools are available to solve real problems in ways that are accessible,
+            useful, and often surprisingly simple.
+          </p>
+          <p>
+            In a formal sense, it combines computer science, interaction design, and systems thinking
+            to produce solutions that are both functional and meaningful.
+          </p>
+        </div>
+
+        <!-- Personal take -->
+        <div class="ct-block ct-highlight fade-up">
+          <div class="quote-line"></div>
+          <p class="ct-quote">
+            "For me, creative technology is about solving student-level problems using simple and accessible
+            tools rather than complex systems."
+          </p>
+        </div>
+
+        <!-- Connection to engineering -->
+        <div class="ct-block fade-up">
+          <h3 class="ct-sub">How It Connects to My Work</h3>
+          <div class="ct-connect-grid">
+            <div class="ct-connect-item">
+              <span class="ct-connect-icon">⚙</span>
+              <div>
+                <strong>Automation</strong>
+                <p>Web tools that automate repetitive tasks — like extracting PDF data — mirror the logic
+                of control systems in mechanical engineering.</p>
+              </div>
+            </div>
+            <div class="ct-connect-item">
+              <span class="ct-connect-icon">◈</span>
+              <div>
+                <strong>Web Tools</strong>
+                <p>Browser-based tools are accessible by default. No installation, no learning curve — just
+                open and use. That's engineering-level thinking applied to software.</p>
+              </div>
+            </div>
+            <div class="ct-connect-item">
+              <span class="ct-connect-icon">◻</span>
+              <div>
+                <strong>Engineering Systems</strong>
+                <p>A well-built college predictor is a system — it takes inputs, processes logic, and
+                returns outputs. Same principle as any mechanical control loop.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       CONTACT SECTION
+       Simple form UI — no backend, just frontend validation
+  ============================================================ -->
+  <section class="section contact" id="contact">
+    <div class="container">
+
+      <div class="section-header fade-up">
+        <span class="section-tag">// 04</span>
+        <h2 class="section-title">Contact</h2>
+      </div>
+
+      <div class="contact-grid">
+
+        <div class="contact-info fade-up">
+          <p>I'm always open to conversations about engineering, tools, or just ideas worth building.
+          Drop a message below.</p>
+          <div class="contact-detail">
+            <span class="contact-label">Location</span>
+            <span>Pune, Maharashtra</span>
+          </div>
+          <div class="contact-detail">
+            <span class="contact-label">Course</span>
+            <span>B.Tech Mechanical Engg.</span>
+          </div>
+          <div class="contact-detail">
+            <span class="contact-label">College</span>
+            <span>MITAOE, Pune</span>
+          </div>
+        </div>
+
+        <!-- Contact form — validation is handled in script.js -->
+        <form class="contact-form fade-up" id="contact-form" novalidate>
+
+          <div class="form-group">
+            <label for="name">Name</label>
+            <input type="text" id="name" name="name" placeholder="Your name" autocomplete="off" />
+            <span class="form-error" id="name-error"></span>
+          </div>
+
+          <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" placeholder="your@email.com" autocomplete="off" />
+            <span class="form-error" id="email-error"></span>
+          </div>
+
+          <div class="form-group">
+            <label for="message">Message</label>
+            <textarea id="message" name="message" rows="5" placeholder="What's on your mind?"></textarea>
+            <span class="form-error" id="message-error"></span>
+          </div>
+
+          <button type="submit" class="btn btn-primary btn-submit">Send Message</button>
+          <p class="form-success" id="form-success">Message sent! (Demo — no backend connected)</p>
+
+        </form>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       FOOTER
+  ============================================================ -->
+  <footer class="footer">
+    <div class="container footer-inner">
+      <span class="footer-brand">Harshvardhan Lokhande</span>
+      <span class="footer-copy">B.Tech Mech. Engg. · MITAOE Pune · 2025–2029</span>
+      <span class="footer-made">Built with HTML, CSS &amp; JS</span>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
