@@ -394,4 +394,68 @@ document.addEventListener('DOMContentLoaded', () => {
   window.addEventListener('scroll', updateActiveLink);
   updateActiveLink();
 
+
+  // ===========================================================
+  // 6. SKILLS TABS — switch between Engineering / Software
+  // ===========================================================
+
+  const skillsTabs = document.querySelectorAll('.skills-tab');
+  const tabContents = document.querySelectorAll('.skills-tab-content');
+
+  skillsTabs.forEach(tab => {
+    tab.addEventListener('click', () => {
+      // Remove active from all tabs and contents
+      skillsTabs.forEach(t => t.classList.remove('active'));
+      tabContents.forEach(c => c.classList.remove('active'));
+
+      // Activate clicked tab
+      tab.classList.add('active');
+      const targetId = 'tab-' + tab.getAttribute('data-tab');
+      const targetContent = document.getElementById(targetId);
+      if (targetContent) {
+        targetContent.classList.add('active');
+        // Animate progress bars in the newly active tab
+        animateProgressBars(targetContent);
+        // Re-observe fade-up elements in the new tab
+        targetContent.querySelectorAll('.fade-up').forEach(el => {
+          el.classList.add('visible');
+        });
+      }
+    });
+  });
+
+
+  // ===========================================================
+  // 7. ANIMATED PROGRESS BARS — fill when scrolled into view
+  // ===========================================================
+
+  function animateProgressBars(container) {
+    const bars = container.querySelectorAll('.sp-bar-fill');
+    bars.forEach((bar, index) => {
+      const progress = bar.getAttribute('data-progress');
+      // Reset first for re-animation
+      bar.style.width = '0%';
+      setTimeout(() => {
+        bar.style.width = progress + '%';
+      }, 80 + index * 100);
+    });
+  }
+
+  // Observer for the skills section to trigger bar animation on scroll
+  const skillsSection = document.getElementById('interests-skills');
+  if (skillsSection) {
+    const barObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          // Animate the active tab's progress bars
+          const activeTab = skillsSection.querySelector('.skills-tab-content.active');
+          if (activeTab) animateProgressBars(activeTab);
+          barObserver.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.2 });
+
+    barObserver.observe(skillsSection);
+  }
+
 });
